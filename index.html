@@ -1,0 +1,797 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Alphonz Tony C — AI & Software Developer">
+  <title>Alphonz Tony C | AI & Software Developer</title>
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --surface: #0d1b2d;
+      --surface-light: #12243a;
+      --cyan: #35d6e8;
+      --text: #eaf4ff;
+      --muted: #9aadc2;
+      --border: rgba(255,255,255,.09);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7,17,31,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--cyan);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+
+    section {
+      padding: 85px 0;
+      scroll-margin-top: 70px;
+    }
+
+    .section-alt {
+      background: #091727;
+    }
+
+    .section-heading {
+      margin-bottom: 35px;
+    }
+
+    .section-index {
+      color: var(--cyan);
+      font-size: 13px;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: clamp(27px, 4vw, 38px);
+      margin-top: 8px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      padding: 90px 0;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .hero-tag {
+      color: var(--cyan);
+      font-size: 14px;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 7vw, 65px);
+      line-height: 1.15;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: var(--cyan);
+    }
+
+    .hero p {
+      color: var(--muted);
+      max-width: 650px;
+      font-size: 17px;
+      margin-bottom: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 23px;
+      border-radius: 7px;
+      background: var(--cyan);
+      color: #06111e;
+      font-weight: bold;
+      margin: 5px 8px 5px 0;
+      transition: .2s;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .button-outline {
+      background: transparent;
+      color: var(--cyan);
+      border: 1px solid var(--cyan);
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .profile-photo {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 2px solid var(--cyan);
+      background: var(--surface-light);
+    }
+
+    .about-content h3 {
+      color: var(--cyan);
+      font-size: 25px;
+      margin-bottom: 5px;
+    }
+
+    .about-content p {
+      color: var(--muted);
+      margin-top: 14px;
+    }
+
+    .about-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .detail-tag {
+      background: var(--surface-light);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 13px;
+      font-size: 13px;
+      color: var(--cyan);
+    }
+
+    /* SKILLS */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card,
+    .project-card,
+    .journey-card,
+    .msme-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 23px;
+    }
+
+    .skill-card h3,
+    .project-card h3,
+    .journey-card h3 {
+      color: var(--cyan);
+      margin-bottom: 12px;
+    }
+
+    .skill-card p,
+    .project-card p,
+    .journey-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* PROJECTS */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .project-card .project-type {
+      color: var(--cyan);
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .project-card .project-links {
+      margin-top: auto;
+      padding-top: 12px;
+    }
+
+    .project-links a {
+      color: var(--cyan);
+      font-size: 14px;
+      margin-right: 15px;
+    }
+
+    .project-status {
+      display: inline-block;
+      width: fit-content;
+      padding: 4px 9px;
+      border-radius: 5px;
+      background: rgba(53,214,232,.1);
+      color: var(--cyan);
+      font-size: 11px;
+      font-weight: bold;
+    }
+
+    /* MSME */
+
+    .msme-card {
+      border-color: rgba(53,214,232,.35);
+      padding: 30px;
+    }
+
+    .msme-topline {
+      color: var(--cyan);
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+    }
+
+    .msme-card h3 {
+      font-size: clamp(22px, 3vw, 29px);
+      line-height: 1.35;
+      margin-bottom: 15px;
+    }
+
+    .msme-card > p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .msme-flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      align-items: center;
+      margin: 22px 0;
+    }
+
+    .flow-step {
+      background: var(--surface-light);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 9px 12px;
+      color: var(--text);
+      font-size: 13px;
+    }
+
+    .flow-arrow {
+      color: var(--cyan);
+    }
+
+    .msme-status {
+      border-top: 1px solid var(--border);
+      padding-top: 17px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .msme-status strong {
+      color: var(--cyan);
+    }
+
+    /* JOURNEY */
+
+    .journey-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .journey-card {
+      display: flex;
+      gap: 15px;
+    }
+
+    .journey-icon {
+      font-size: 25px;
+    }
+
+    /* CONTACT */
+
+    .contact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 30px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      margin: 10px 0;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .contact-links a {
+      color: var(--cyan);
+    }
+
+    footer {
+      padding: 25px 0;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 750px) {
+      .nav-links {
+        gap: 12px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-photo {
+        max-width: 220px;
+      }
+
+      .skills-grid,
+      .projects-grid,
+      .journey-list {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        padding: 15px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <nav class="container">
+      <a href="#home" class="logo">Alphonz.</a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#msme">MSME</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-tag">AI & SOFTWARE DEVELOPER</div>
+
+          <h1>
+            Hi, I'm <span>Alphonz Tony C</span>
+          </h1>
+
+          <p>
+            I explore the intersection of Artificial Intelligence,
+            software development and real-world problem solving.
+            I enjoy building practical applications and learning
+            technologies that turn ideas into working solutions.
+          </p>
+
+          <a href="#projects" class="button">Explore My Work</a>
+          <a href="#contact" class="button button-outline">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section-alt" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-index">01 / ABOUT ME</div>
+          <h2>About Me</h2>
+        </div>
+
+        <div class="about-grid">
+
+          <!-- Replace assets/profile.jpg with your photo -->
+          <img
+            src="assets/Alphonz_Photo.jpeg"
+            alt="Profile photo of Alphonz Tony C"
+            class="profile-photo"
+          >
+
+          <div class="about-content">
+            <h3>Alphonz Tony C</h3>
+            <div class="muted">AI & Software Developer</div>
+
+            <p>
+              I am a B.Tech Artificial Intelligence and Data Science
+              student at Dr. N.G.P. Institute of Technology,
+              Coimbatore.
+            </p>
+
+            <p>
+              My interests include Artificial Intelligence,
+              Python development, backend systems, web applications
+              and solving practical problems through technology.
+              I enjoy working on projects, exploring new tools
+              and continuously improving my technical skills.
+            </p>
+
+            <div class="about-details">
+              <span class="detail-tag">Artificial Intelligence</span>
+              <span class="detail-tag">Python</span>
+              <span class="detail-tag">C#</span>
+              <span class="detail-tag">Web Development</span>
+              <span class="detail-tag">Problem Solving</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-index">02 / TECHNICAL SKILLS</div>
+          <h2>Skills & Technologies</h2>
+        </div>
+
+        <div class="skills-grid">
+
+          <div class="skill-card">
+            <h3>Programming</h3>
+            <p>Python, C#, JavaScript, C fundamentals</p>
+          </div>
+
+          <div class="skill-card">
+            <h3>Web Development</h3>
+            <p>HTML, CSS, JavaScript, Next.js, FastAPI</p>
+          </div>
+
+          <div class="skill-card">
+            <h3>AI & Data</h3>
+            <p>AI/ML fundamentals, NumPy, Pandas, Streamlit</p>
+          </div>
+
+          <div class="skill-card">
+            <h3>Database</h3>
+            <p>PostgreSQL, Supabase, SQL</p>
+          </div>
+
+          <div class="skill-card">
+            <h3>Tools</h3>
+            <p>Git, GitHub, VS Code, MATLAB</p>
+          </div>
+
+          <div class="skill-card">
+            <h3>Productivity</h3>
+            <p>Microsoft Excel, Word, PowerPoint</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section-alt" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-index">03 / MY WORK</div>
+          <h2>Projects</h2>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project-card">
+            <div class="project-type">Medical Technology · Research</div>
+            <h3>DOE-Based Adaptive Medical X-Ray Compression and Transmission Optimization</h3>
+            <p>
+              A web application exploring adaptive X-ray image
+              compression and transmission optimization using
+              different compression methods and network conditions.
+            </p>
+            <span class="project-status">Web Application Implemented</span>
+          </article>
+
+          <article class="project-card">
+            <div class="project-type">Web Development · Team Project</div>
+            <h3>Hotel Management System</h3>
+            <p>
+              A hotel management application developed using
+              ASP.NET Core Web API, covering guest management,
+              rooms, reservations, check-in/check-out, payments
+              and invoices.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/Alphonz88/hotel-management-system"
+                 target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-type">AI · Responsible AI</div>
+            <h3>Responsible AI Hiring System</h3>
+            <p>
+              A Streamlit-based resume screening project exploring
+              candidate scoring and fairness-aware hiring support
+              without using demographic attributes.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/Alphonz88/enterprise-responsible-ai-hiring"
+                 target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-type">AI · Healthcare</div>
+            <h3>AyuSaarthi-AI</h3>
+            <p>
+              An AI-assisted AYUSH pre-consultation platform.
+              The project is under development, with patient
+              dashboard and login work in progress.
+            </p>
+            <span class="project-status">In Development</span>
+          </article>
+
+          <article class="project-card">
+            <div class="project-type">Web Application · Land Technology</div>
+            <h3>LandLit Connect</h3>
+            <p>
+              A prototype concept for land litigation verification
+              and decision support, with land-related information
+              and case-monitoring features.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/Alphonz88/LandLit-Connect"
+                 target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- MSME IDEA HACKATHON -->
+    <section id="msme">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-index">04 / INNOVATION</div>
+          <h2>MSME Idea Hackathon 6.0</h2>
+        </div>
+
+        <article class="msme-card">
+
+          <div class="msme-topline">
+            SELECTED PROJECT PROPOSAL
+          </div>
+
+          <h3>
+            Smart IoT-Based Heavy Metal Detection and
+            Intelligent Diversion System
+          </h3>
+
+          <p>
+            An IoT-based industrial wastewater safety concept that
+            combines multi-parameter water-quality sensors with
+            AI-assisted verification to identify possible heavy-metal
+            contamination and automatically divert contaminated
+            wastewater for treatment.
+          </p>
+
+          <div class="msme-flow">
+            <span class="flow-step">Water Sensors</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">ESP32 Controller</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">Random Forest AI</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">Contamination Check</span>
+            <span class="flow-arrow">→</span>
+            <span class="flow-step">Intelligent Diversion</span>
+          </div>
+
+          <p>
+            The proposed system monitors heavy metals and supporting
+            water-quality parameters. When contamination exceeds
+            configured safe limits, it can trigger alerts and divert
+            wastewater to a recovery tank for treatment, followed by
+            a final water-quality check.
+          </p>
+
+          <div class="msme-status">
+            <strong>Proposal Submitted · In Progress</strong>
+            <br>
+            Selected after project presentation. Proposal document
+            submitted; process in progress.
+          </div>
+
+        </article>
+      </div>
+    </section>
+
+    <!-- JOURNEY -->
+    <section class="section-alt" id="journey">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-index">05 / EXPERIENCE</div>
+          <h2>Learning & Achievements</h2>
+        </div>
+
+        <div class="journey-list">
+
+          <div class="journey-card">
+            <div class="journey-icon">🏆</div>
+            <div>
+              <h3>MSME Idea Hackathon 6.0</h3>
+              <p>
+                Project selected after presentation.
+                Proposal document submitted and currently in progress.
+              </p>
+            </div>
+          </div>
+
+          <div class="journey-card">
+            <div class="journey-icon">🎤</div>
+            <div>
+              <h3>CELESTIA'26</h3>
+              <p>
+                Reached the final round of a paper presentation
+                at KPR Institute of Engineering and Technology.
+              </p>
+            </div>
+          </div>
+
+          <div class="journey-card">
+            <div class="journey-icon">💡</div>
+            <div>
+              <h3>HackAce</h3>
+              <p>
+                Participated in the final round with a project team.
+              </p>
+            </div>
+          </div>
+
+          <div class="journey-card">
+            <div class="journey-icon">📚</div>
+            <div>
+              <h3>Technical Learning</h3>
+              <p>
+                Infosys Springboard Python Basics and
+                MATLAB Onramp learning programmes.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-index">06 / GET IN TOUCH</div>
+          <h2>Let's Connect</h2>
+        </div>
+
+        <div class="contact-card">
+          <h3>Have an idea or opportunity?</h3>
+          <p>
+            I'm interested in connecting, learning, collaborating
+            and exploring opportunities in AI and software development.
+          </p>
+
+          <div class="contact-links">
+            <a href="mailto:alphonz422@gmail.com">Email ↗</a>
+
+            <a href="https://github.com/Alphonz88"
+               target="_blank" rel="noopener">GitHub ↗</a>
+
+            <a href="https://www.linkedin.com/in/alphonz-tony-c-5b8822398/"
+               target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 Alphonz Tony C · AI & Software Developer
+    </div>
+  </footer>
+
+</body>
+</html>
